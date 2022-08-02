@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+Pro:wght@400;600&display=swap");
+/*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+/* HSL color mode */
+/*========== Font and typography ==========*/
+/* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+/*========== Font weight ==========*/
+/*========== Margenes Bottom ==========*/
+/* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+/*========== z index ==========*/
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+Pro:wght@400;600&display=swap");
+/*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+/* HSL color mode */
+/*========== Font and typography ==========*/
+/* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+/*========== Font weight ==========*/
+/*========== Margenes Bottom ==========*/
+/* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+/*========== z index ==========*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 0 3rem 0;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.938rem;
+  background-color: #fbfefc;
+  color: #8892b0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #8892b0;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  counter-reset: section;
+  background-image: url("../../images/ColoredPatterns.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y;
+}
+
+#content {
+  background-color: #0a192f;
+  counter-reset: numbered;
+}
+
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.section__title {
+  font-size: 1.5rem;
+  color: #ccd6f6;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: 0.813rem;
+  margin-bottom: 3rem;
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+.container {
+  max-width: 768px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header {
+  position: fixed;
+  z-index: 100;
+}
+
+header {
+  position: fixed;
+  left: 2rem;
+  bottom: 0;
+  height: 50vh;
+  transition: width 0.5 ease-in-out;
+}
+header::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  margin: 1rem 0.5rem;
+  background-color: #ccd6f6;
+}
+header .nav--menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: width 0.5s ease-in-out;
+}
+header .nav--menu .nav--item {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.25s ease-in-out;
+  white-space: nowrap;
+  cursor: pointer;
+}
+header .nav--menu .nav--item:before {
+  counter-increment: section;
+  content: "0" counter(section) ".";
+  display: inline-block;
+  left: 0;
+  font-family: "IBM Plex Mono", monospace;
+  color: #73f9d9;
+}
+header .nav--menu .nav--item:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 0;
+  border-bottom: 10px solid #ccd6f6;
+  z-index: 1;
+  left: -20px;
+  margin-top: 0.25rem;
+  transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+header .nav--menu .nav--item a {
+  position: relative;
+  font-family: "IBM Plex Mono", monospace;
+}
+header .nav--menu .nav--item:hover {
+  width: 120px;
+}
+header .nav--menu .nav--item:hover:after {
+  transform: rotate(90deg);
+  border-color: #73f9d9;
+  border: 5px solid transparent;
+  border-top: 0;
+  border-bottom: 10px solid #73f9d9;
+}
+
+.main {
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0 150px;
+  background-image: url("../../images/ColoredPatterns.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.section {
+  padding: 0 150px;
+  display: flex;
+  align-items: center;
+}
+
+.hero {
+  height: 100%;
+}
+.hero .hero__container {
+  align-items: center;
+  width: 100%;
+}
+.hero .hero__container .hero__content {
+  width: 100%;
+  padding: 50px;
+}
+.hero .hero__container .hero__content h1 {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.938rem;
+  font-weight: 500;
+  color: #73f9d9;
+}
+.hero .hero__container .hero__content h2 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 2rem;
+  color: #ccd6f6;
+  font-weight: 600;
+  font-size: 80px;
+}
+.hero .hero__container .hero__content h3 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 2rem;
+  color: #8892b0;
+  font-weight: 600;
+  font-size: 80px;
+}
+.hero .hero__container .hero__content p {
+  margin-top: 20px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.125rem;
+  color: #8892b0;
+  font-weight: 600;
+  width: 45%;
+}
+
+a {
+  color: #73f9d9;
+  text-decoration: none;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.btn {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #73f9d9;
+  border-color: #73f9d9;
+  border-radius: 4px;
+  border-style: solid;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.125rem;
+}
+.btn:hover {
+  background-color: rgba(115, 249, 217, 0.3);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  padding: 100px 200px;
+}
+
+.numbered-heading {
+  position: relative;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  font-size: 1.5rem;
+}
+.numbered-heading:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #ccd6f6;
+  position: absolute;
+  top: 1rem;
+  margin-left: 1rem;
+}
+.numbered-heading:before {
+  content: "0" counter(numbered) ".";
+  counter-increment: numbered;
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: "IBM Plex Mono", monospace;
+  color: #73f9d9;
+  margin-right: 0.5rem;
+}
+
+.about .inner {
+  grid-template-columns: repeat(2, 1fr);
+}
+.about-text {
+  width: 75%;
+}
+.about .about-pic {
+  width: 80%;
+  border-radius: 4px;
+  border-radius: 60% 40% 40% 80%;
+}
+.about .about-pic .wrapper {
+  filter: hue-rotate(100deg);
+  transition: filter 0.25s ease-in-out;
+}
+.about .about-pic .wrapper img {
+  border-radius: 60% 40% 40% 80%;
+  transition: border-radius 0.25s ease-in-out;
+}
+.about .about-pic .wrapper:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #73f9d9;
+  top: 20px;
+  left: 20px;
+  z-index: -1;
+  border-radius: 60% 40% 40% 80%;
+  transition: border-radius 0.25s ease-in-out;
+}
+.about .about-pic .wrapper:hover {
+  filter: hue-rotate(0deg);
+}
+.about .about-pic .wrapper:hover img {
+  border-radius: 3rem;
+}
+.about .about-pic .wrapper:hover:after {
+  border-radius: 3rem;
+}
