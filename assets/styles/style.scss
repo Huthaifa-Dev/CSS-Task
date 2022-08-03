@@ -364,7 +364,7 @@ a {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    border-radius: 5px;
+    border-radius: $border-radius;
     position: relative;
     height: 100%;
     scrollbar-width: 0none;
@@ -441,6 +441,7 @@ a {
               transition: $transition;
               filter: hue-rotate(100deg) grayscale(100%) contrast(1)
                 brightness(100%);
+              border-radius: $border-radius;
             }
           }
         }

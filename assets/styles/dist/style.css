@@ -499,7 +499,7 @@ a {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  border-radius: 5px;
+  border-radius: 4px;
   position: relative;
   height: 100%;
   scrollbar-width: 0none;
@@ -562,6 +562,7 @@ a {
 .projects .projects-list .project .wrapper .project-image .green-filter img {
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   filter: hue-rotate(100deg) grayscale(100%) contrast(1) brightness(100%);
+  border-radius: 4px;
 }
 .projects .projects-list .project .project-info {
   position: absolute;
