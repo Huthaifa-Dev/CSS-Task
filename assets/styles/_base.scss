@@ -74,7 +74,9 @@ body {
   background-size: 150%;
   background-repeat: repeat-y;
   background-position: 100% 50%;
+  scroll-behavior: smooth;
   cursor: url("/assets/images/cursor.png"), auto;
+  scrollbar-color: $dark-slate $navy;
 }
 button,
 a {
@@ -86,16 +88,26 @@ a {
   //   background-color: $navy;
   counter-reset: numbered;
 }
+// main {
+//   height: 100vh;
+//   overflow-y: auto;
+//   scroll-snap-type: y mandatory;
+//   -webkit-overflow-scrolling: touch;
+//   &::-webkit-scrollbar {
+//     width: 0;
+//   }
+// }
 .section {
   display: flex;
   align-items: center;
-  display: flex;
   -webkit-box-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
+  scroll-snap-align: start;
+  overflow: hidden;
 }
 
 .section__title {

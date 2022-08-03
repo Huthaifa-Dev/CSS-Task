@@ -82,7 +82,9 @@ body {
   background-size: 150%;
   background-repeat: repeat-y;
   background-position: 100% 50%;
+  scroll-behavior: smooth;
   cursor: url("/assets/images/cursor.png"), auto;
+  scrollbar-color: #495670 #0a192f;
 }
 
 button:hover,
@@ -97,13 +99,14 @@ a:hover {
 .section {
   display: flex;
   align-items: center;
-  display: flex;
   -webkit-box-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
+  scroll-snap-align: start;
+  overflow: hidden;
 }
 
 .section__title {
