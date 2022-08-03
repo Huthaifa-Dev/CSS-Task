@@ -1,6 +1,22 @@
 @import "./variables";
 @import "./base";
-
+body {
+  counter-reset: section;
+  position: relative;
+  background: url("/assets/images/ColoredPatterns.svg");
+  background-size: 150%;
+  background-repeat: repeat-y;
+  background-position: 100% 50%;
+  scroll-behavior: smooth;
+  cursor: url("/assets/images/cursor.png"), auto;
+  scrollbar-color: $dark-slate $navy;
+}
+button,
+a {
+  &:hover {
+    cursor: url("/assets/images/pointer.png"), auto;
+  }
+}
 // Header
 header {
   position: fixed;
