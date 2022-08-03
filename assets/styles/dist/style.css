@@ -420,6 +420,12 @@ a {
 .timeline .container:not(:first-child) {
   margin-top: -200px;
 }
+.timeline .container:last-child {
+  padding-bottom: 1rem;
+}
+.timeline .container:nth-child(2) {
+  margin-top: -250px;
+}
 .timeline .container .item__title {
   color: #ccd6f6;
   font-size: 22px;
