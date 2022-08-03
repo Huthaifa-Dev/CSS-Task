@@ -572,6 +572,108 @@ a {
   }
 }
 
+.contact {
+  .inner {
+    width: 100%;
+  }
+  width: 100%;
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: $mb-2;
+  }
+
+  &-form {
+    background: $navy;
+    flex: 2;
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      gap: $mb-2;
+    }
+    .head {
+      display: flex;
+      gap: $mb-2;
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: $mb-0-5;
+        font-size: $fz-xl;
+        flex: 1;
+      }
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: $mb-0-5;
+      font-size: $fz-xl;
+      flex: 1;
+    }
+    input,
+    textarea {
+      padding: $mb-0-5 $mb-0-5;
+      font-size: $fz-md;
+      font-family: $second-font;
+      background: none;
+      border: 1px solid $slate;
+      color: $green;
+      border-radius: $border-radius;
+      resize: none;
+      transition: $transition;
+      &:focus {
+        outline: none;
+        border: 1px solid $green;
+      }
+      &:active {
+        border: 1px solid $green;
+      }
+    }
+    textarea {
+      height: 200px;
+    }
+    .btn {
+      margin-top: 0;
+    }
+  }
+  &-info {
+    background: $navy;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: $mb-2 0;
+    gap: $mb-2;
+    .contact-info-item {
+      display: flex;
+      gap: $mb-2;
+      font-family: $second-font;
+      color: $green;
+      .contact-info-item-icon {
+        flex: 1;
+        width: 32px;
+      }
+    }
+  }
+}
+.footer {
+  width: 100%;
+}
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-family: $second-font;
+  font-size: $fz-md;
+  margin-top: $mb-2;
+  a {
+    margin-left: $mb-0-5;
+  }
+}
 @keyframes down {
   from {
     bottom: 100px;

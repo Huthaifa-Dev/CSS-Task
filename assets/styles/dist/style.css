@@ -106,6 +106,16 @@ a:hover {
   counter-reset: numbered;
 }
 
+main {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+main::-webkit-scrollbar {
+  width: 0;
+}
+
 .section {
   display: flex;
   align-items: center;
@@ -668,6 +678,112 @@ a {
   background: #0a192f;
   padding: 2rem;
   border-radius: 4px;
+}
+
+.contact {
+  width: 100%;
+}
+.contact .inner {
+  width: 100%;
+}
+.contact .wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 2rem;
+}
+.contact-form {
+  background: #0a192f;
+  flex: 2;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+}
+.contact-form .head {
+  display: flex;
+  gap: 2rem;
+}
+.contact-form .head .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 20px;
+  flex: 1;
+}
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 20px;
+  flex: 1;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem 0.5rem;
+  font-size: 16px;
+  font-family: "SF Mono", "IBM Plex Mono", monospace;
+  background: none;
+  border: 1px solid #8892b0;
+  color: #73f9d9;
+  border-radius: 4px;
+  resize: none;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border: 1px solid #73f9d9;
+}
+.contact-form input:active,
+.contact-form textarea:active {
+  border: 1px solid #73f9d9;
+}
+.contact-form textarea {
+  height: 200px;
+}
+.contact-form .btn {
+  margin-top: 0;
+}
+.contact-info {
+  background: #0a192f;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem 0;
+  gap: 2rem;
+}
+.contact-info .contact-info-item {
+  display: flex;
+  gap: 2rem;
+  font-family: "SF Mono", "IBM Plex Mono", monospace;
+  color: #73f9d9;
+}
+.contact-info .contact-info-item .contact-info-item-icon {
+  flex: 1;
+  width: 32px;
+}
+
+.footer {
+  width: 100%;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-family: "SF Mono", "IBM Plex Mono", monospace;
+  font-size: 16px;
+  margin-top: 2rem;
+}
+.copyright a {
+  margin-left: 0.5rem;
 }
 
 @keyframes down {

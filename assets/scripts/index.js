@@ -1,24 +1,18 @@
 const sections = document.querySelectorAll("section");
 const navLi = document.querySelectorAll("nav ul li");
 const main = document.querySelector('.main');
-window.addEventListener("scroll", () => {
+main.addEventListener("scroll", () => {
     let current = "";
     sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        console.log(sectionTop, sectionHeight);
-        // console.log(window.innerHeight, window.innerWidth);
-        console.log(sectionTop - sectionHeight / 3, pageXOffset);
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        if (isInViewport(section)) {
             current = section.getAttribute("id");
         }
     });
 
     navLi.forEach((li) => {
         li.classList.remove("active");
-        // console.log(li.classList.contains(`${current}_link`));
-        // console.log(li.classList[1])
-        // console.log(current);
         if (li.classList.contains(`${current}_link`)) {
             li.classList.add("active");
         }
@@ -26,13 +20,7 @@ window.addEventListener("scroll", () => {
 });
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
-    if (element.classList.contains("experience")) {
-        console.log(rect.top,
-            rect.left,
-            rect.bottom, window.innerHeight,
-            rect.right
-        );
-    }
+
     return (
         rect.top >= 0 &&
         rect.left >= 0 &&
