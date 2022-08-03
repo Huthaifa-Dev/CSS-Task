@@ -11,24 +11,22 @@
 
 <body>
     <!-- HEADER -->
+
     <header class="header" id="header">
         <nav class="nav container">
             <a href="#" class="nav_logo"></a>
             <div class="nav--menu" id="nav-menu">
                 <ul class="nav--list grid">
-                    <li class="nav--item">
+                    <li class="nav--item about_link">
                         <a href="#about">About</a>
                     </li>
-                    <li class="nav--item">
+                    <li class="nav--item experience_link">
                         <a href="#experince">Experince</a>
                     </li>
-                    <li class="nav--item">
-                        <a href="#services">Services</a>
-                    </li>
-                    <li class="nav--item">
+                    <li class="nav--item projects_link">
                         <a href="#projects">Projects</a>
                     </li>
-                    <li class="nav--item">
+                    <li class="nav--item contact_link">
                         <a href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -40,7 +38,7 @@
     <!-- CONTENT -->
     <div id="content">
         <main class="main">
-            <section class="hero section" id="hero">
+            <section class="hero section container" id="hero">
                 <div class="hero__container">
                     <div class="hero__content">
                         <div class="hero__details">
@@ -53,9 +51,9 @@
                                         target="_blank">Foothill Solutions</a></span>, and working on my graduation
                                 project <span class="link"><a href="https://github.com/AArU-Internship-Manager"
                                         rel="noreferrer" target="_blank">Internship Management System</a></span>.</p>
-                            <button class="btn btn--primary" id="btn-contact">
-                                <span class="btn__text">Contact Me!</span>
-                            </button>
+                            <a class="btn" href="#contact">
+                                Contact Me!
+                            </a>
                         </div>
                         <div class="hero__image">
                         </div>
@@ -63,13 +61,13 @@
                 </div>
             </section>
             </section>
-            <section class="about section" id="about">
+            <section class="about section container" id="about">
 
                 <div class="inner grid">
                     <div class="about-text">
                         <h2 class="numbered-heading">About Me</h2>
                         <p>
-                            Hello! My name is Huthaifa, and I enjoy creating things that live on the internet. My
+                            Hello! My name is Huthaifa, and I enjoy creating things for web. My
                             interest in web development began in 2016 when I decided to attempt modifying my Facebook
                             page style using inspect element and CSS — by changing the colors and certain shapes. This
                             experience taught me a lot about HTML and CSS!
@@ -85,7 +83,8 @@
                         </p>
                         <p>
                             Today, I'm a front-end intern at <span class="link"><a
-                                    href="https://www.foothillsolutions.com/">Foothill Solutions</a></span>.
+                                    href="https://www.foothillsolutions.com/">Foothill Solutions</a></span>, Learning
+                            how to create amazing web application in React.
                         </p>
                         <p>Here are a few technologies I've lately worked with:</p>
                         <ul class="skills-list">
@@ -106,53 +105,107 @@
                     </div>
                 </div>
             </section>
-            <section class="experince section" id="experience">
-
+            <section class="experince section container" id="experience">
                 <div class="inner">
-                    <h2 class="numbered-heading">Experience</h2>
-                    <div class="experience-item">
-                        <div class="experience-item-header">
-                            <h3>Front-End Intern</h3>
-                            <h4>Foothill Solutions</h4>
-                            <h5>Summer 2018</h5>
+                    <h2 class="numbered-heading">Experience & Studies</h2>
+                    <div class="timeline">
+                        <div class="container left">
+                            <div class="blur"></div>
+                            <div class="content">
+                                <h2 class="item__title">Software Engineer</h2>
+                                <h3 class="item__location">
+                                    <a href="https://ptuk.edu.ps/ar/" target="_blank">
+                                        Palestinian Technical University - Kadoree
+                                    </a>
+                                </h3>
+                                <h3 class="item__time">
+                                    Sep 2018 - Present
+                                </h3>
+
+                                <ul class="item__list">
+                                    <li>Experience with C++ and OOP, datastructure and algorithms in Java, and
+                                        SQL-based database management systems.</li>
+                                    <li>Managing software development in Software Engineering, i've done some
+                                        projects
+                                        with Java e.g. Datastructure visualizer.</li>
+                                    <li>Developing websites in JavaScript and CSS.</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="experience-item-body">
-                            <p>
-                                I worked as a front-end intern at Foothill Solutions, a company that specializes in
-                                creating web-based solutions. I spearheaded the creation of a new website for the
-                                company,
-                                and oversaw the development of the company's online presence.
-                            </p>
-                            <p>
-                                I spearheaded the creation of a new website for the company, and oversaw the development
-                                of the company's online presence. I spearheaded the creation of a new website for the
-                                company, and oversaw the development of the company's online presence.
-                            </p>
+                        <div class="container right">
+                            <div class="blur"></div>
+                            <div class="content">
+                                <h2 class="item__title">JavaScript Courses</h2>
+                                <h3 class="item__location">
+                                    <a href="https://frontendmasters.com/" target="_blank">
+                                        Frontend Masters
+                                    </a>
+                                </h3>
+                                <h3 class="item__time">
+                                    Feb 2021 - Apr 2021
+                                </h3>
+
+                                <ul class="item__list">
+                                    <li>I started my journey in JavaScript by watching Fundamental JavaScript tought
+                                        by
+                                        <a href="https://www.linkedin.com/in/bgando">Bianca Gandolfo</a>.
+                                    </li>
+                                    <li>I studied advanced concepts in the JavaScript language to understand what
+                                        happens behind the scenes of JavaScript. </li>
+                                    <li>Experienced how to use the JavaScript language to create web applications.
+                                    </li>
+
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-item-header">
-                            <h3>Front-End Intern</h3>
-                            <h4>Foothill Solutions</h4>
-                            <h5>Summer 2018</h5>
+                        <div class="container left">
+                            <div class="blur"></div>
+                            <div class="content">
+                                <h2 class="item__title">React Guide</h2>
+                                <h3 class="item__location">
+                                    <a href="https://academind.com/" target="_blank">
+                                        Academind
+                                    </a>
+                                </h3>
+                                <h3 class="item__time">
+                                    Oct 2021 - Mar 2022
+                                </h3>
+
+                                <ul class="item__list">
+                                    <li>Experience with C++ and OOP, datastructure and algorithms in Java, and
+                                        SQL-based database management systems.</li>
+                                    <li>Managing software development in Software Engineering, i've done some
+                                        projects
+                                        with Java e.g. Datastructure visualizer.</li>
+                                    <li>Developing websites in JavaScript and CSS.</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="experience-item-body">
-                            <p>
-                                I worked as a front-end intern at Foothill Solutions, a company that specializes in
-                                creating web-based solutions. I spearheaded the creation of a new website for the
-                                company,
-                                and oversaw the development of the company's online presence.
-                            </p>
-                            <p>
-                                I spearheaded the creation of a new website for the company, and oversaw the development
-                                of the company's online presence. I spearheaded the creation of a new website for the
-                                company, and oversaw the development of the company's online presence.
-                            </p>
+                        <div class="container right">
+                            <div class="blur"></div>
+                            <div class="content">
+                                <h2 class="item__title">Frontend Intern</h2>
+                                <h3 class="item__location">
+                                    <a href="https://www.foothillsolutions.com/" target="_blank">
+                                        Foothill Solutions
+                                    </a>
+                                </h3>
+                                <h3 class="item__time">
+                                    Jun 2022 - Present
+                                </h3>
+
+                                <ul class="item__list">
+                                    <li>Experience with C++ and OOP, datastructure and algorithms in Java, and
+                                        SQL-based database management systems.</li>
+                                    <li>Managing software development in Software Engineering, i've done some
+                                        projects
+                                        with Java e.g. Datastructure visualizer.</li>
+                                    <li>Developing websites in JavaScript and CSS.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="services section" id="services">
             </section>
             <section class="projects section" id="projects"> </section>
             <section class="contact section" id="contact"> </section>
@@ -167,6 +220,8 @@
     </div>
     <!-- END CONTENT -->
 
+    <!-- SCRIPT (Only for the Highlighting) -->
+    <script src="/assets/scripts/index.js"></script>
 </body>
 
 </html>

@@ -1,56 +1,6 @@
 @import "./variables";
 @import "./base";
 
-// Customizable Elements
-body {
-  counter-reset: section;
-
-  background-image: url("../../images/ColoredPatterns.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat-y;
-}
-#content {
-  background-color: $navy;
-  counter-reset: numbered;
-}
-.section {
-  padding: 2rem 0 4rem;
-}
-
-.section__title {
-  font-size: $h1-font-size;
-  color: $lightest-slate;
-}
-
-.section__subtitle {
-  display: block;
-  font-size: $small-font-size;
-  margin-bottom: $mb-3;
-}
-.section__title,
-.section__subtitle {
-  text-align: center;
-}
-
-// Layout adjustments
-.container {
-  max-width: 768px;
-  margin-left: $mb-1-5;
-  margin-right: $mb-1-5;
-}
-
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.header {
-  position: fixed;
-  z-index: $z-fixed;
-  //   background-color: $body-color;
-}
-
 // Header
 header {
   position: fixed;
@@ -72,6 +22,8 @@ header {
     justify-content: space-between;
     position: relative;
     transition: width 0.5s ease-in-out;
+    margin-left: $mb-1-5;
+
     .nav--item {
       &:before {
         counter-increment: section;
@@ -85,7 +37,7 @@ header {
       overflow: hidden;
       transition: width 0.25s ease-in-out;
       white-space: nowrap;
-      cursor: pointer;
+      cursor: url("/assets/images/pointer.png"), auto;
       &:after {
         content: "";
         display: inline-block;
@@ -104,7 +56,8 @@ header {
         position: relative;
         font-family: $second-font;
       }
-      &:hover {
+      &:hover,
+      &.active {
         width: 120px;
         &:after {
           transform: rotate(90deg);
@@ -121,25 +74,18 @@ header {
   height: 100vh;
   margin: 0 auto;
   padding: 0 150px;
-  background-image: url("../../images/ColoredPatterns.svg");
-  background-size: cover;
-  background-position: center;
+  max-width: 1600px;
+  min-height: 100vh;
 }
 .section {
-  padding: 0 150px;
-  display: flex;
-  align-items: center;
 }
 .hero {
   height: 100%;
   .hero__container {
-    // padding: 150px;
     align-items: center;
-    // background-color: red;
     width: 100%;
     .hero__content {
       width: 100%;
-      padding: 50px;
       h1 {
         font-family: $second-font;
         font-size: $normal-font-size;
@@ -179,7 +125,8 @@ a {
 }
 
 .btn {
-  margin-top: $mb-2;
+  margin-top: $mb-3;
+  display: inline-block;
   padding: $mb-1 $mb-2;
   background-color: transparent;
   color: $green;
@@ -188,49 +135,27 @@ a {
   border-style: solid;
   font-family: $second-font;
   font-size: $h3-font-size;
+  transition: background-color 0.2s ease-in-out;
   &:hover {
     background-color: rgba($color: $green, $alpha: 0.3);
   }
 }
-.section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: $mb-2;
-  padding: 100px 200px;
-}
-.numbered-heading {
-  position: relative;
-  margin-bottom: $mb-2;
-  overflow: hidden;
-  font-size: $h1-font-size;
-  &:after {
-    content: "";
-    width: 100%;
-    height: 1px;
-    background-color: $lightest-slate;
-    position: absolute;
-    top: $mb-1;
-    margin-left: $mb-1;
-  }
-  &:before {
-    content: "0" counter(numbered) ".";
-    counter-increment: numbered;
-    display: inline-block;
-    font-size: $h3-font-size;
-    font-weight: $font-regular;
-    font-family: $second-font;
-    color: $green;
-    margin-right: $mb-0-5;
-  }
-}
+
+// Section header with numbering
+
+// about section
 .about {
   .inner {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    align-items: flex-start;
   }
   &-text {
-    width: 75%;
+    p {
+      margin-bottom: $mb-1;
+      font-size: $h3-font-size;
+      text-align: justify;
+    }
   }
   .about-pic {
     width: 80%;
@@ -266,5 +191,151 @@ a {
         }
       }
     }
+  }
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: $mb-0-5;
+    margin-top: $mb-2;
+    // overflow-x: hidden;
+    padding-left: $mb-2;
+    li {
+      position: relative;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 4px solid transparent;
+        border-right: 0;
+        border-left: 8px solid $green;
+        z-index: 1;
+        left: -20px;
+        margin-top: $mb-0-25;
+      }
+    }
+  }
+}
+.experince {
+  //   align-items: center;
+  //   max-width: 100%;
+}
+.timeline {
+  position: relative;
+  max-width: 50%;
+  /* The actual timeline (the vertical ruler) */
+  &:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: $slate;
+    left: 50%;
+    top: 0;
+  }
+
+  /* Container around content */
+  .container {
+    position: relative;
+    background-color: rgba($color: $navy, $alpha: 0.5);
+    .blur {
+      width: 80%;
+      height: 80%;
+      position: absolute;
+      border: 1px solid red;
+      top: 10%;
+      left: 10%;
+      z-index: -1;
+      background: $navy;
+      filter: blur(100px);
+    }
+    &:not(:first-child) {
+      margin-top: -175px;
+    }
+    padding: $mb-3;
+    .item__title {
+      color: $lightest-slate;
+      font-size: $fz-xxl;
+      margin-bottom: $mb-0-5;
+    }
+    .item__time {
+      color: $light-slate;
+      font-size: $fz-sm;
+      font-family: $second-font;
+      margin-bottom: $mb-2;
+
+      font-weight: $font-regular;
+    }
+    .item__location {
+      font-size: $fz-md;
+      margin-bottom: $mb-0-25;
+    }
+
+    .item__list {
+      margin-left: $mb-1;
+
+      li {
+        position: relative;
+        margin-bottom: $mb-1;
+        &:before {
+          position: absolute;
+          left: -$mb-1;
+          top: $mb-0-5;
+          content: "";
+          border-color: $green;
+          border: 3px solid transparent;
+          border-right: 0;
+          border-left: 6px solid $green;
+        }
+      }
+    }
+    /* The circles on the timeline */
+    &:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: $green;
+      top: 25%;
+      z-index: 1;
+      border: 2px solid $white;
+    }
+  }
+
+  /* Place the container to the left */
+  .left {
+    /* Add arrows to the left container (pointing right) */
+    position: relative;
+    left: -50%;
+    &:before {
+    }
+    &:after {
+      right: -$mb-0-75;
+    }
+  }
+
+  /* Place the container to the right */
+  .right {
+    position: relative;
+    left: 50%;
+    /* Add arrows to the right container (pointing left) */
+
+    &:before {
+    }
+    /* Fix the circle for containers on the right side */
+    &:after {
+      left: -$mb-0-75;
+    }
+  }
+
+  /* The actual content */
+  .content {
+    // padding: 20px 30px;
+    // background-color: white;
+    // position: relative;
+    // border-radius: 6px;
   }
 }

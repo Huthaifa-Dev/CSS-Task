@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+Pro:wght@400;600&display=swap");
+@import url("http://fonts.cdnfonts.com/css/sf-mono");
 /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 /* HSL color mode */
 /*========== Font and typography ==========*/
@@ -8,6 +9,7 @@
 /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
 /*========== z index ==========*/
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+Pro:wght@400;600&display=swap");
+@import url("http://fonts.cdnfonts.com/css/sf-mono");
 /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 /* HSL color mode */
 /*========== Font and typography ==========*/
@@ -55,21 +57,63 @@ img {
   height: auto;
 }
 
+.numbered-heading {
+  position: relative;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  font-size: 32px;
+  width: 100%;
+  color: #e6f1ff;
+}
+.numbered-heading:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #8892b0;
+  position: absolute;
+  top: 50%;
+  margin-left: 1rem;
+}
+.numbered-heading:before {
+  content: "0" counter(numbered) ".";
+  counter-increment: numbered;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "SF Mono", "IBM Plex Mono", monospace;
+  color: #73f9d9;
+  margin-right: 0.5rem;
+}
+
 body {
   counter-reset: section;
-  background-image: url("../../images/ColoredPatterns.svg");
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  background: url("/assets/images/ColoredPatterns.svg");
+  background-size: 150%;
   background-repeat: repeat-y;
+  background-position: 100% 50%;
+  cursor: url("/assets/images/cursor.png"), auto;
+}
+
+button:hover,
+a:hover {
+  cursor: url("/assets/images/pointer.png"), auto;
 }
 
 #content {
-  background-color: #0a192f;
   counter-reset: numbered;
 }
 
 .section {
-  padding: 2rem 0 4rem;
+  display: flex;
+  align-items: center;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100vh;
 }
 
 .section__title {
@@ -89,9 +133,8 @@ body {
 }
 
 .container {
-  max-width: 768px;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .grid {
@@ -102,6 +145,14 @@ body {
 .header {
   position: fixed;
   z-index: 100;
+}
+
+.inner {
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
@@ -125,20 +176,21 @@ header .nav--menu {
   justify-content: space-between;
   position: relative;
   transition: width 0.5s ease-in-out;
+  margin-left: 1.5rem;
 }
 header .nav--menu .nav--item {
   width: 0;
   overflow: hidden;
   transition: width 0.25s ease-in-out;
   white-space: nowrap;
-  cursor: pointer;
+  cursor: url("/assets/images/pointer.png"), auto;
 }
 header .nav--menu .nav--item:before {
   counter-increment: section;
   content: "0" counter(section) ".";
   display: inline-block;
   left: 0;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "SF Mono", "IBM Plex Mono", monospace;
   color: #73f9d9;
 }
 header .nav--menu .nav--item:after {
@@ -157,12 +209,12 @@ header .nav--menu .nav--item:after {
 }
 header .nav--menu .nav--item a {
   position: relative;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "SF Mono", "IBM Plex Mono", monospace;
 }
-header .nav--menu .nav--item:hover {
+header .nav--menu .nav--item:hover, header .nav--menu .nav--item.active {
   width: 120px;
 }
-header .nav--menu .nav--item:hover:after {
+header .nav--menu .nav--item:hover:after, header .nav--menu .nav--item.active:after {
   transform: rotate(90deg);
   border-color: #73f9d9;
   border: 5px solid transparent;
@@ -174,15 +226,8 @@ header .nav--menu .nav--item:hover:after {
   height: 100vh;
   margin: 0 auto;
   padding: 0 150px;
-  background-image: url("../../images/ColoredPatterns.svg");
-  background-size: cover;
-  background-position: center;
-}
-
-.section {
-  padding: 0 150px;
-  display: flex;
-  align-items: center;
+  max-width: 1600px;
+  min-height: 100vh;
 }
 
 .hero {
@@ -194,10 +239,9 @@ header .nav--menu .nav--item:hover:after {
 }
 .hero .hero__container .hero__content {
   width: 100%;
-  padding: 50px;
 }
 .hero .hero__container .hero__content h1 {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "SF Mono", "IBM Plex Mono", monospace;
   font-size: 0.938rem;
   font-weight: 500;
   color: #73f9d9;
@@ -232,60 +276,31 @@ a {
 }
 
 .btn {
-  margin-top: 2rem;
+  margin-top: 3rem;
+  display: inline-block;
   padding: 1rem 2rem;
   background-color: transparent;
   color: #73f9d9;
   border-color: #73f9d9;
   border-radius: 4px;
   border-style: solid;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "SF Mono", "IBM Plex Mono", monospace;
   font-size: 1.125rem;
+  transition: background-color 0.2s ease-in-out;
 }
 .btn:hover {
   background-color: rgba(115, 249, 217, 0.3);
 }
 
-.section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 2rem;
-  padding: 100px 200px;
-}
-
-.numbered-heading {
-  position: relative;
-  margin-bottom: 2rem;
-  overflow: hidden;
-  font-size: 1.5rem;
-}
-.numbered-heading:after {
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: #ccd6f6;
-  position: absolute;
-  top: 1rem;
-  margin-left: 1rem;
-}
-.numbered-heading:before {
-  content: "0" counter(numbered) ".";
-  counter-increment: numbered;
-  display: inline-block;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: "IBM Plex Mono", monospace;
-  color: #73f9d9;
-  margin-right: 0.5rem;
-}
-
 .about .inner {
-  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  align-items: flex-start;
 }
-.about-text {
-  width: 75%;
+.about-text p {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  text-align: justify;
 }
 .about .about-pic {
   width: 80%;
@@ -321,4 +336,127 @@ a {
 }
 .about .about-pic .wrapper:hover:after {
   border-radius: 3rem;
+}
+.about .skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 0.5rem;
+  margin-top: 2rem;
+  padding-left: 2rem;
+}
+.about .skills-list li {
+  position: relative;
+}
+.about .skills-list li:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-right: 0;
+  border-left: 8px solid #73f9d9;
+  z-index: 1;
+  left: -20px;
+  margin-top: 0.25rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 50%;
+  /* The actual timeline (the vertical ruler) */
+  /* Container around content */
+  /* Place the container to the left */
+  /* Place the container to the right */
+  /* The actual content */
+}
+.timeline:after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #8892b0;
+  left: 50%;
+  top: 0;
+}
+.timeline .container {
+  position: relative;
+  background-color: rgba(10, 25, 47, 0.5);
+  padding: 3rem;
+  /* The circles on the timeline */
+}
+.timeline .container .blur {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  border: 1px solid red;
+  top: 10%;
+  left: 10%;
+  z-index: -1;
+  background: #0a192f;
+  filter: blur(100px);
+}
+.timeline .container:not(:first-child) {
+  margin-top: -175px;
+}
+.timeline .container .item__title {
+  color: #ccd6f6;
+  font-size: 22px;
+  margin-bottom: 0.5rem;
+}
+.timeline .container .item__time {
+  color: #a8b2d1;
+  font-size: 14px;
+  font-family: "SF Mono", "IBM Plex Mono", monospace;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+.timeline .container .item__location {
+  font-size: 16px;
+  margin-bottom: 0.25rem;
+}
+.timeline .container .item__list {
+  margin-left: 1rem;
+}
+.timeline .container .item__list li {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.timeline .container .item__list li:before {
+  position: absolute;
+  left: -1rem;
+  top: 0.5rem;
+  content: "";
+  border-color: #73f9d9;
+  border: 3px solid transparent;
+  border-right: 0;
+  border-left: 6px solid #73f9d9;
+}
+.timeline .container:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #73f9d9;
+  top: 25%;
+  z-index: 1;
+  border: 2px solid #e6f1ff;
+}
+.timeline .left {
+  /* Add arrows to the left container (pointing right) */
+  position: relative;
+  left: -50%;
+}
+.timeline .left:after {
+  right: -0.75rem;
+}
+.timeline .right {
+  position: relative;
+  left: 50%;
+  /* Add arrows to the right container (pointing left) */
+  /* Fix the circle for containers on the right side */
+}
+.timeline .right:after {
+  left: -0.75rem;
 }
