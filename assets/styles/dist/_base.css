@@ -51,7 +51,8 @@ img {
   position: relative;
   margin-bottom: 2rem;
   overflow: hidden;
-  font-size: 32px;
+  font-size: clamp(26px, 5vw, 32px);
+  white-space: nowrap;
   width: 100%;
   color: #e6f1ff;
 }

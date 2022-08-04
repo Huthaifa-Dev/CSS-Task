@@ -42,7 +42,8 @@ img {
   position: relative;
   margin-bottom: $mb-2;
   overflow: hidden;
-  font-size: $fz-heading;
+  font-size: clamp(26px, 5vw, $fz-heading);
+  white-space: nowrap;
   width: 100%;
   color: $white;
   &:after {
