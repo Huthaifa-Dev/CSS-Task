@@ -76,7 +76,7 @@ header {
       }
       &:hover,
       &.active {
-        width: 120px;
+        width: 140px;
         &:after {
           transform: rotate(90deg);
           border-color: $green;
@@ -266,9 +266,9 @@ a {
     }
     &:last-child {
       padding-bottom: $mb-1;
+      margin-top: -250px;
     }
     &:nth-child(2) {
-      margin-top: -250px;
     }
     padding: $mb-3;
     .item__title {

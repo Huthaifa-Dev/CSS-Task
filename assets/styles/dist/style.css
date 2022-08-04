@@ -256,7 +256,7 @@ header .nav--menu .nav--item a {
   font-family: "SF Mono", "IBM Plex Mono", monospace;
 }
 header .nav--menu .nav--item:hover, header .nav--menu .nav--item.active {
-  width: 120px;
+  width: 140px;
 }
 header .nav--menu .nav--item:hover:after, header .nav--menu .nav--item.active:after {
   transform: rotate(90deg);
@@ -434,8 +434,6 @@ a {
 }
 .timeline .container:last-child {
   padding-bottom: 1rem;
-}
-.timeline .container:nth-child(2) {
   margin-top: -250px;
 }
 .timeline .container .item__title {
