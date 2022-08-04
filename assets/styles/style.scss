@@ -701,6 +701,7 @@ a {
       background-color: $green;
       mix-blend-mode: multiply;
       clip-path: circle(55%);
+      transition: $transition;
     }
     img {
       filter: grayscale(100%) contrast(1) brightness(100%);

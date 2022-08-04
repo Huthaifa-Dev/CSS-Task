@@ -111,6 +111,7 @@ main {
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 main::-webkit-scrollbar {
   width: 0;
@@ -813,6 +814,7 @@ a {
   background-color: #73f9d9;
   mix-blend-mode: multiply;
   clip-path: circle(55%);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .footer a img {
   filter: grayscale(100%) contrast(1) brightness(100%);
