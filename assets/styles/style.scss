@@ -685,6 +685,39 @@ a {
 .footer {
   width: 100%;
   scroll-snap-align: end;
+  //   background: ;
+  a {
+    position: relative;
+    background: $navy;
+    cursor: url("/assets/images/pointer.png"), auto;
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 180%;
+      top: -22px;
+      left: 0;
+      background-color: $green;
+      mix-blend-mode: multiply;
+      clip-path: circle(55%);
+    }
+    img {
+      filter: grayscale(100%) contrast(1) brightness(100%);
+      transition: $transition;
+    }
+    transition: $transition;
+    &:hover {
+      &:after {
+        opacity: 0;
+      }
+      img {
+        filter: none;
+        cursor: url("/assets/images/pointer.png"), auto;
+        transform: translateY(-10px);
+      }
+    }
+  }
 }
 .copyright {
   display: flex;
