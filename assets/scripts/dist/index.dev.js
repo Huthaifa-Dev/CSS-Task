@@ -26,3 +26,13 @@ function isInViewport(element) {
   var rect = element.getBoundingClientRect();
   return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
 }
+
+function showNavbar() {
+  var x = document.querySelector("nav--list");
+
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}

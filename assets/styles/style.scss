@@ -39,7 +39,9 @@ header {
     position: relative;
     transition: width 0.5s ease-in-out;
     margin-left: $mb-1-5;
-
+    a.icon {
+      display: none;
+    }
     .nav--item {
       &:before {
         counter-increment: section;
@@ -686,7 +688,8 @@ a {
   width: 100%;
   scroll-snap-align: end;
   //   background: ;
-  a {
+
+  .links a {
     position: relative;
     background: $navy;
     cursor: url("/assets/images/pointer.png"), auto;
@@ -748,3 +751,100 @@ a {
     bottom: 100px;
   }
 }
+
+// @media only screen and (max-width: 768px) {
+//   .container {
+//     max-width: 100%;
+//   }
+//   body {
+//     h1,
+//     h2,
+//     h3,
+//     h4 {
+//       font-size: 1em;
+//     }
+//   }
+//   header {
+//     // transform: rotate(90deg);
+//     // height: $mb-3;
+//     width: 100%;
+//     background: $navy;
+//     display: flex;
+//     flex-direction: row;
+//     bottom: 0;
+//     left: 0;
+//     // border: 1px solid red;
+//     padding: 0;
+//     position: fixed;
+//     &:after {
+//       content: "";
+//       width: 100%;
+//       height: 100%;
+//       //   background-color: $green;
+//       //   border: 1px solid $blue;
+//       z-index: 9;
+//       margin: 0;
+//       position: absolute;
+//     }
+//     .container {
+//       margin: 0;
+//       padding: 0;
+//       width: 100%;
+//       //   background: orange;
+
+//       .nav--menu {
+//         margin: 0;
+//         // border: 1px solid $green;
+//         padding: $mb-0-5;
+//         a.icon {
+//           display: block;
+//           position: absolute;
+//           bottom: 0;
+//           right: $mb-1;
+//           z-index: 10;
+//           width: 40px;
+//           height: 40px;
+//         }
+//         .nav--list {
+//           //   display: none;
+//           height: 400px;
+//         }
+//       }
+//     }
+//     &:after {
+//       width: 0;
+//     }
+//     .nav--menu {
+//       flex-direction: row;
+//       justify-content: space-between;
+//       align-items: center;
+//       padding: 10px;
+//       width: 100%;
+//       .nav--list {
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-between;
+//         flex-wrap: wrap;
+//         align-items: center;
+//         width: 100%;
+//         gap: $mb-2;
+//         .nav--item {
+//           min-width: 40%;
+//           flex: 1;
+//           &:after {
+//             border: 0;
+//           }
+//           .nav--link {
+//             font-size: $fz-md;
+//             font-family: $second-font;
+//             color: $green;
+//             transition: $transition;
+//             &:hover {
+//               color: $green;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

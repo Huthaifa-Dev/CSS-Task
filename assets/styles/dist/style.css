@@ -209,6 +209,9 @@ header .nav--menu {
   transition: width 0.5s ease-in-out;
   margin-left: 1.5rem;
 }
+header .nav--menu a.icon {
+  display: none;
+}
 header .nav--menu .nav--item {
   width: 0;
   overflow: hidden;
@@ -798,13 +801,13 @@ a {
   width: 100%;
   scroll-snap-align: end;
 }
-.footer a {
+.footer .links a {
   position: relative;
   background: #0a192f;
   cursor: url("/assets/images/pointer.png"), auto;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.footer a:after {
+.footer .links a:after {
   position: absolute;
   content: "";
   width: 100%;
@@ -816,14 +819,14 @@ a {
   clip-path: circle(55%);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.footer a img {
+.footer .links a img {
   filter: grayscale(100%) contrast(1) brightness(100%);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.footer a:hover:after {
+.footer .links a:hover:after {
   opacity: 0;
 }
-.footer a:hover img {
+.footer .links a:hover img {
   filter: none;
   cursor: url("/assets/images/pointer.png"), auto;
   transform: translateY(-10px);
