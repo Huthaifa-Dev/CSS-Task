@@ -118,6 +118,15 @@ main::-webkit-scrollbar {
   width: 0;
 }
 
+@media only screen and (max-width: 768px) {
+  main {
+    scroll-snap-type: none;
+  }
+
+  section {
+    scroll-snap-align: none;
+  }
+}
 .section {
   display: flex;
   align-items: center;
@@ -527,7 +536,7 @@ a {
 }
 .projects .projects-list .project .wrapper {
   box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   position: relative;
 }
 .projects .projects-list .project .wrapper:hover {
@@ -550,7 +559,7 @@ a {
   z-index: 1;
   background-color: #73f9d9;
   mix-blend-mode: multiply;
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .projects .projects-list .project .wrapper .project-image .green-filter:hover:after {
   opacity: 0;
@@ -559,7 +568,7 @@ a {
   filter: none;
 }
 .projects .projects-list .project .wrapper .project-image .green-filter img {
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   filter: hue-rotate(100deg) grayscale(100%) contrast(1) brightness(100%);
   border-radius: 4px;
 }
@@ -568,7 +577,7 @@ a {
   padding: 2rem;
   border-radius: 4px;
   z-index: 9;
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   animation: up 0.5s ease-in-out forwards;
   background: #112240;
   box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
@@ -576,7 +585,7 @@ a {
 }
 .projects .projects-list .project .project-info .project-title a {
   color: #ccd6f6;
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .projects .projects-list .project .project-info .project-title a:hover {
   color: #73f9d9;
@@ -645,7 +654,7 @@ a {
 .articles .articles-list .article .wrapper {
   width: 60%;
   box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   position: relative;
 }
 .articles .articles-list .article .wrapper:hover {
@@ -661,7 +670,7 @@ a {
   z-index: 0;
   background-color: #73f9d9;
   mix-blend-mode: multiply;
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .articles .articles-list .article .wrapper:hover:after {
   opacity: 0;
@@ -670,7 +679,7 @@ a {
   filter: none;
 }
 .articles .articles-list .article .wrapper img {
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   filter: hue-rotate(100deg) grayscale(100%) contrast(1) brightness(100%);
 }
 .articles .articles-list .article .article-info {
@@ -690,7 +699,7 @@ a {
 }
 .articles .articles-list .article .article-info a {
   color: #e6f1ff;
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .articles .articles-list .article .article-info a:hover {
   color: #73f9d9;
@@ -754,7 +763,7 @@ a {
   color: #73f9d9;
   border-radius: 4px;
   resize: none;
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
@@ -800,7 +809,7 @@ a {
   position: relative;
   background: #0a192f;
   cursor: url("/assets/images/pointer.png"), auto;
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .footer .links a:after {
   position: absolute;
@@ -812,11 +821,11 @@ a {
   background-color: #73f9d9;
   mix-blend-mode: multiply;
   clip-path: circle(55%);
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .footer .links a img {
   filter: grayscale(100%) contrast(1) brightness(100%);
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .footer .links a:hover:after {
   opacity: 0;

@@ -108,6 +108,15 @@ main::-webkit-scrollbar {
   width: 0;
 }
 
+@media only screen and (max-width: 768px) {
+  main {
+    scroll-snap-type: none;
+  }
+
+  section {
+    scroll-snap-align: none;
+  }
+}
 .section {
   display: flex;
   align-items: center;
