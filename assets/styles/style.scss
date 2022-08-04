@@ -105,17 +105,17 @@ header {
         font-size: $big-font-size;
         color: $lightest-slate;
         font-weight: $font-semi-bold;
-        font-size: 80px;
+        font-size: 5rem;
       }
       h3 {
         font-family: $body-font;
         font-size: $big-font-size;
         color: $slate;
         font-weight: $font-semi-bold;
-        font-size: 80px;
+        font-size: 5rem;
       }
       p {
-        margin-top: 20px;
+        margin-top: $mb-1-5;
         font-family: $body-font;
         font-size: $h3-font-size;
         color: $slate;
