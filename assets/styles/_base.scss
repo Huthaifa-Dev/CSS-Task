@@ -68,6 +68,18 @@ img {
 }
 
 // Customizable Elements
+
+@media screen and (min-height: 1000px) {
+  main {
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  section {
+    scroll-snap-align: start;
+  }
+}
+
 body {
   counter-reset: section;
   position: relative;
@@ -78,7 +90,7 @@ body {
   scroll-behavior: smooth;
   cursor: url("/assets/images/cursor.png"), auto;
   scrollbar-color: $dark-slate $navy;
-  overflow: hidden;
+  // overflow: hidden;
 }
 button,
 a {
@@ -93,13 +105,8 @@ a {
 main {
   // height: calc(100vh - 50px);
   height: 100vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling: touch;
+
   scroll-behavior: smooth;
-  &::-webkit-scrollbar {
-    width: 0;
-  }
 }
 @media only screen and (max-width: 768px) {
   main {
@@ -116,9 +123,7 @@ main {
   justify-content: center;
   -webkit-box-align: center;
   flex-direction: column;
-  align-items: flex-start;
   min-height: 100vh;
-  scroll-snap-align: start;
   overflow: hidden;
 }
 
