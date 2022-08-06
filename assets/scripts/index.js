@@ -1,33 +1,33 @@
 const sections = document.querySelectorAll("section");
 const navLi = document.querySelectorAll("nav ul li");
 const main = document.querySelector('.main');
-// main.addEventListener("scroll", () => {
-//     let current = "";
-//     sections.forEach((section) => {
-//         const sectionTop = section.offsetTop;
-//         const sectionHeight = section.clientHeight;
-//         console.log(sectionTop + " " + sectionHeight);
-//         if (isInViewport(section)) {
-//             current = section.getAttribute("id");
-//         }
-//     });
+window.innerHeight > 880 && main.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+        console.log(isInViewport(section))
+        console.log(section.getAttribute("id"));
+        if (isInViewport(section)) {
+            current = section.getAttribute("id");
+        }
+    });
 
-//     navLi.forEach((li) => {
-//         li.classList.remove("active");
-//         if (li.classList.contains(`${current}_link`)) {
-//             li.classList.add("active");
-//         }
-//     });
-// });
-main.addEventListener("scroll", function () {
+    navLi.forEach((li) => {
+        li.classList.remove("active");
+        if (li.classList.contains(`${current}_link`)) {
+            li.classList.add("active");
+        }
+    });
+});
+
+
+window.addEventListener("scroll", function () {
     var current = "";
     sections.forEach(function (section) {
         var sectionTop = section.offsetTop;
         var sectionHeight = section.clientHeight;
-
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        if (pageYOffset >= sectionTop - sectionHeight / 3 && window.innerHeight < 880) {
             current = section.getAttribute("id");
-            console.log("Current: " + current);
+            console.log(current);
         }
     });
     navLi.forEach(function (li) {
@@ -40,7 +40,6 @@ main.addEventListener("scroll", function () {
 });
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
-
     return (
         rect.top >= 0 &&
         rect.left >= 0 &&

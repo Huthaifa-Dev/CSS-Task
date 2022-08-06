@@ -69,14 +69,21 @@ img {
 
 // Customizable Elements
 
-@media screen and (min-height: 1000px) {
+@media (min-height: 880px) {
   main {
     overflow-y: auto;
     scroll-snap-type: y mandatory;
     -webkit-overflow-scrolling: touch;
+    height: 100vh;
+
+    scroll-behavior: smooth;
   }
   section {
     scroll-snap-align: start;
+    min-height: 100vh;
+  }
+  body {
+    overflow: hidden;
   }
 }
 
@@ -104,9 +111,6 @@ a {
 }
 main {
   // height: calc(100vh - 50px);
-  height: 100vh;
-
-  scroll-behavior: smooth;
 }
 @media only screen and (max-width: 768px) {
   main {
@@ -123,7 +127,7 @@ main {
   justify-content: center;
   -webkit-box-align: center;
   flex-direction: column;
-  min-height: 100vh;
+
   overflow: hidden;
 }
 
