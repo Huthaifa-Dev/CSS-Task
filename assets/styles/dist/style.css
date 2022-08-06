@@ -88,16 +88,27 @@ img {
 
 @media (min-height: 880px) {
   main {
+    height: 100vh;
     overflow-y: auto;
     scroll-snap-type: y mandatory;
     -webkit-overflow-scrolling: touch;
-    height: 100vh;
     scroll-behavior: smooth;
   }
+  main::-webkit-scrollbar {
+    width: 0;
+  }
 
-  section {
-    scroll-snap-align: start;
+  .section {
+    display: flex;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    flex-direction: column;
+    align-items: flex-start;
     min-height: 100vh;
+    scroll-snap-align: start;
+    overflow: hidden;
   }
 
   body {
@@ -140,6 +151,7 @@ a:hover {
   justify-content: center;
   -webkit-box-align: center;
   flex-direction: column;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -951,6 +963,7 @@ a {
   }
   .projects .projects-list .project .project-info .project-technologies {
     flex-wrap: wrap;
+    background: none;
   }
   .projects .projects-list .project .project-info .project-description {
     background: none;
@@ -958,8 +971,7 @@ a {
   }
   .projects .projects-list .project .project-info .links {
     display: flex;
-    flex-direction: column;
-    right: 0;
+    right: 1rem;
     bottom: 1rem;
   }
   .projects .projects-list .project .wrapper {

@@ -821,6 +821,7 @@ a {
         .project-info {
           .project-technologies {
             flex-wrap: wrap;
+            background: none;
           }
           flex: 3;
           //   position: relative;
@@ -837,8 +838,8 @@ a {
           animation: none !important;
           .links {
             display: flex;
-            flex-direction: column;
-            right: 0;
+            // flex-direction: column;
+            right: $mb-1;
             bottom: $mb-1;
           }
         }
