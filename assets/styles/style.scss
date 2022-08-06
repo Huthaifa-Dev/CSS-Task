@@ -1,22 +1,6 @@
 @import "./variables";
 @import "./base";
-body {
-  counter-reset: section;
-  position: relative;
-  background: url("/assets/images/ColoredPatterns.svg");
-  background-size: 150%;
-  background-repeat: repeat-y;
-  background-position: 100% 50%;
-  scroll-behavior: smooth;
-  cursor: url("/assets/images/cursor.png"), auto;
-  scrollbar-color: $dark-slate $navy;
-}
-button,
-a {
-  &:hover {
-    cursor: url("/assets/images/pointer.png"), auto;
-  }
-}
+
 // Header
 header {
   position: fixed;
@@ -172,11 +156,26 @@ a {
     border-radius: $border-radius;
     border-radius: 60% 40% 40% 80%;
     .wrapper {
-      filter: hue-rotate(100deg);
-      transition: filter 0.25s ease-in-out;
+      // transition: filter 0.25s ease-in-out;
+      position: relative;
       img {
+        filter: grayscale(100%) brightness(100%) contrast(1);
         border-radius: 60% 40% 40% 80%;
-        transition: border-radius 0.25s ease-in-out;
+        transition: $transition;
+        // overflow: hidden;
+        position: relative;
+      }
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 99%;
+        content: "";
+        z-index: 1;
+        border-radius: 60% 40% 40% 80%;
+        transition: $transition;
+        background-color: rgba($color: $green, $alpha: 0.3);
       }
       &:after {
         content: "";
@@ -185,19 +184,23 @@ a {
         width: 100%;
         height: 100%;
         border: 2px solid $green;
-        top: 20px;
-        left: 20px;
+        top: 10px;
+        left: 10px;
         z-index: -1;
         border-radius: 60% 40% 40% 80%;
         transition: border-radius 0.25s ease-in-out;
       }
       &:hover {
-        filter: hue-rotate(0deg);
         img {
-          border-radius: 3rem;
+          border-radius: $mb-3;
+          filter: hue-rotate(0deg);
         }
         &:after {
-          border-radius: 3rem;
+          border-radius: $mb-3;
+        }
+        &:before {
+          border-radius: $mb-3;
+          background: transparent;
         }
       }
     }
@@ -254,11 +257,11 @@ a {
       width: 80%;
       height: 80%;
       position: absolute;
-      //   border: 1px solid red;
+      // border: 1px solid red;
       top: 10%;
       left: 10%;
       z-index: -1;
-      background: $navy;
+      background-color: $navy;
       filter: blur(100px);
     }
     &:not(:first-child) {
@@ -392,7 +395,7 @@ a {
         .project-image {
           //   width: 100%;
           //   height: 100%;
-          background-color: $green;
+          // background-color: $green;
           border-radius: $border-radius;
           //   vertical-align: middle;
           //   position: relative;
@@ -406,7 +409,7 @@ a {
               top: 0;
               left: 0;
               z-index: 1;
-              background-color: $green;
+              background-color: rgba($color: $green, $alpha: 0.5);
               mix-blend-mode: multiply;
               transition: $transition;
             }
@@ -524,7 +527,7 @@ a {
           top: 0;
           left: 0;
           z-index: 0;
-          background-color: $green;
+          background-color: rgba($color: $green, $alpha: 0.5);
           mix-blend-mode: multiply;
           transition: $transition;
         }
@@ -568,7 +571,7 @@ a {
       .article-description {
         box-shadow: 0 10px 30px -15px $navy-shadow;
         font-size: $fz-lg;
-        background: $navy;
+        background: $light-navy;
         padding: $mb-2;
         border-radius: $border-radius;
       }
@@ -732,6 +735,9 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+  body {
+    background-size: auto;
+  }
   header {
     display: none;
   }
@@ -751,9 +757,10 @@ a {
     .inner {
       grid-template-columns: 1fr;
       grid-template-rows: auto;
+      justify-items: center;
       gap: $mb-1;
       .about-pic {
-        order: 1;
+        // order: 1;
         .wrapper {
           &:after {
             top: 0;
@@ -762,11 +769,11 @@ a {
         }
       }
       .about-text {
-        order: 2;
+        // order: 2;
         .skills-list {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: auto;
           gap: $mb-1;
           background: $navy;
         }
@@ -820,7 +827,7 @@ a {
           width: 100%;
           height: auto;
           top: 35%;
-          background: rgba($color: $navy, $alpha: 0.8);
+          background: rgba($color: $light-navy, $alpha: 0.8);
           .project-description {
             background: none;
             font-size: $normal-font-size;

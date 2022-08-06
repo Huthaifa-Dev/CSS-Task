@@ -72,12 +72,13 @@ body {
   counter-reset: section;
   position: relative;
   background: url("/assets/images/ColoredPatterns.svg");
-  background-size: 150%;
-  background-repeat: repeat-y;
-  background-position: 100% 50%;
+  background-size: 100%;
+  // background-repeat: repeat-y;
+  background-position: 100% 100%;
   scroll-behavior: smooth;
   cursor: url("/assets/images/cursor.png"), auto;
   scrollbar-color: $dark-slate $navy;
+  overflow: hidden;
 }
 button,
 a {
@@ -90,6 +91,7 @@ a {
   counter-reset: numbered;
 }
 main {
+  // height: calc(100vh - 50px);
   height: 100vh;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
