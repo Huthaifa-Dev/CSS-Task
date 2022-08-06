@@ -4,8 +4,6 @@ const main = document.querySelector('.main');
 window.innerHeight > 880 && main.addEventListener("scroll", () => {
     let current = "";
     sections.forEach((section) => {
-        console.log(isInViewport(section))
-        console.log(section.getAttribute("id"));
         if (isInViewport(section)) {
             current = section.getAttribute("id");
         }
@@ -20,14 +18,13 @@ window.innerHeight > 880 && main.addEventListener("scroll", () => {
 });
 
 
-window.addEventListener("scroll", function () {
+window.innerHeight <= 880 &&window.addEventListener("scroll", function () {
     var current = "";
     sections.forEach(function (section) {
         var sectionTop = section.offsetTop;
         var sectionHeight = section.clientHeight;
         if (pageYOffset >= sectionTop - sectionHeight / 3 && window.innerHeight < 880) {
             current = section.getAttribute("id");
-            console.log(current);
         }
     });
     navLi.forEach(function (li) {
